@@ -702,8 +702,8 @@ ul {
   .custom__position__card__work__blue__2,
   .custom__position__card__work__blue__3 {
     flex: 0 0 92vw !important;
-    max-width: 94vw !important;
-    min-width: 93.74vw !important;
+    max-width: calc(100vw - 24px) !important;
+    min-width: calc(100vw - 24px) !important;
     padding: 0 !important;
   }
 

@@ -141,8 +141,10 @@ if (rowsCardItWorkMobile) {
               isBlockedVerticalScroll = false;
               document.body.style.overflow = "auto";
               return;
+            } else {
+              rowsCardItWorkMobileSwiper.slideNext();
             }
-            rowsCardItWorkMobileSwiper.slideNext();
+
           }
         });
         window.addEventListener("wheel", () => {
@@ -151,8 +153,9 @@ if (rowsCardItWorkMobile) {
               isBlockedVerticalScroll = false;
               document.body.style.overflow = "auto";
               return;
+            } else {
+              rowsCardItWorkMobileSwiper.slideNext();
             }
-            rowsCardItWorkMobileSwiper.slideNext();
           }
         });
       }
