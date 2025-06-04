@@ -486,6 +486,10 @@ ul {
   position: relative;
 }
 
+.rows__card__it__work-mobile {
+  display: none;
+}
+
 .white__card__work {
   background-image: url("../assets/images/card_it_work_white.svg");
   background-position: center;
@@ -604,23 +608,30 @@ ul {
 }
 
 @media (max-width: 930px) {
+
   .rows__card__it__work {
+    display: none;
+  }
+  .rows__card__it__work-mobile {
     display: flex;
     flex-direction: row;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
     gap: 0;
     padding: 0;
     margin: 0;
     width: 100%;
     position: relative;
-    will-change: transform;
   }
 
-  .rows__card__it__work::-webkit-scrollbar {
-    display: none;
+  .white__card__work img,
+  .blue__card__work img,
+  .custom__position__card__work img,
+  .custom__position__card__work__blue__2 img,
+  .custom__position__card__work__blue__3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
+
 
   .white__card__work,
   .blue__card__work,
@@ -639,7 +650,7 @@ ul {
     height: auto;
     min-height: 240px;
     box-sizing: border-box !important;
-    padding: 24px 18px 18px 18px !important;
+    padding: 0 !important;
     background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
@@ -680,7 +691,7 @@ ul {
 }
 
 @media (max-width: 480px) {
-  .rows__card__it__work {
+  .rows__card__it__work-mobile {
     gap: 4vw;
     padding: 12px 0 12px 4vw;
   }
@@ -691,9 +702,9 @@ ul {
   .custom__position__card__work__blue__2,
   .custom__position__card__work__blue__3 {
     flex: 0 0 92vw !important;
-    max-width: 92vw !important;
-    min-width: 92vw !important;
-    padding: 14px 6px 10px 6px !important;
+    max-width: 94vw !important;
+    min-width: 93.74vw !important;
+    padding: 0 !important;
   }
 
   .white__card__work .title__card__work,
@@ -1792,13 +1803,17 @@ ul {
   }
 
   .rows__card__it__work {
+    display: none;
+  }
+  .rows__card__it__work-mobile {
+    min-height: unset;
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 20px;
-    padding: 20px 0;
-    min-height: auto;
+    flex-direction: row;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    position: relative;
   }
 
   .header__nav-list {

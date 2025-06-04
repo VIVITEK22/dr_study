@@ -113,110 +113,35 @@ document.addEventListener("DOMContentLoaded", initReviewsSwiper);
 
 window.addEventListener("resize", initReviewsSwiper);
 
-document.addEventListener("DOMContentLoaded", function () {
-  const container = document.querySelector(".rows__card__it__work");
-  if (!container) return;
+const rowsCardItWorkMobile =  document.querySelector(".rows__card__it__work-mobile");
 
-  let currentCardIndex = 0;
-  const cards = Array.from(container.children);
-  const totalCards = cards.length;
-  let isScrolling = false;
-  let startY = 0;
-  let currentY = 0;
+if (rowsCardItWorkMobile) {
+  const rowsCardItWorkMobileSwiper = new Swiper(rowsCardItWorkMobile, {
+    slidesPerView: 1,
+    spaceBetween: 20,
+  });
 
-  function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.top <= (window.innerHeight || document.documentElement.clientHeight)
-    );
-  }
+  window.addEventListener("scroll", () => {
+    const scrolledY = window.scrollY;
+    let isBlockedVerticalScroll = true;
 
-  function switchCard(direction) {
-    if (direction === "next" && currentCardIndex < totalCards - 1) {
-      currentCardIndex++;
-    } else if (direction === "prev" && currentCardIndex > 0) {
-      currentCardIndex--;
-    }
-
-    const cardWidth = cards[0].offsetWidth;
-    const scrollPosition = currentCardIndex * cardWidth;
-
-    container.scrollTo({
-      left: scrollPosition,
-      behavior: "smooth",
-    });
-  }
-
-  container.addEventListener(
-    "touchstart",
-    function (e) {
-      if (!isElementInViewport(container)) return;
-      startY = e.touches[0].clientY;
-      isScrolling = true;
-    },
-    { passive: true }
-  );
-
-  container.addEventListener(
-    "touchmove",
-    function (e) {
-      if (!isScrolling || !isElementInViewport(container)) return;
-
-      currentY = e.touches[0].clientY;
-      const deltaY = currentY - startY;
-
-      if (Math.abs(deltaY) > 50) {
-        if (deltaY > 0) {
-          switchCard("prev");
-        } else {
-          switchCard("next");
-        }
-        startY = currentY;
-      }
-    },
-    { passive: true }
-  );
-
-  container.addEventListener(
-    "touchend",
-    function () {
-      isScrolling = false;
-    },
-    { passive: true }
-  );
-
-  let lastScrollY = window.scrollY;
-  let scrollTimeout;
-
-  window.addEventListener(
-    "scroll",
-    function () {
-      if (scrollTimeout) {
-        clearTimeout(scrollTimeout);
-      }
-
-      scrollTimeout = setTimeout(function () {
-        if (!isElementInViewport(container)) return;
-
-        const currentScrollY = window.scrollY;
-        const scrollDirection = currentScrollY > lastScrollY ? "down" : "up";
-        const scrollDelta = Math.abs(currentScrollY - lastScrollY);
-
-        if (scrollDelta > 30) {
-          if (scrollDirection === "down") {
-            switchCard("next");
-          } else {
-            switchCard("prev");
+    if (scrolledY > 768 && scrolledY < 1024 && rowsCardItWorkMobileSwiper.isEnd !== true  && window.innerWidth < 1024) {
+      if (isBlockedVerticalScroll) {
+        document.body.style.overflow = "hidden";
+        window.addEventListener("touchend", () => {
+          if (isBlockedVerticalScroll) {
+            if (rowsCardItWorkMobileSwiper.isEnd === true) {
+              isBlockedVerticalScroll = false;
+              document.body.style.overflow = "auto";
+              return;
+            }
+            rowsCardItWorkMobileSwiper.slideNext();
           }
-        }
-
-        lastScrollY = currentScrollY;
-      }, 50);
-    },
-    { passive: true }
-  );
-});
+        })
+      }
+    }
+  })
+}
 
 let resultsSwiper;
 document.addEventListener("DOMContentLoaded", function () {
