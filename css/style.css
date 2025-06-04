@@ -534,7 +534,7 @@ ul {
 
 .custom__position__card__work__blue__3 {
   position: absolute;
-  right: -37px;
+  right: 0;
   bottom: -243px;
   opacity: 0;
   transform: translateY(50px);
