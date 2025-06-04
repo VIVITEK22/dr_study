@@ -113,7 +113,9 @@ document.addEventListener("DOMContentLoaded", initReviewsSwiper);
 
 window.addEventListener("resize", initReviewsSwiper);
 
-const rowsCardItWorkMobile =  document.querySelector(".rows__card__it__work-mobile");
+const rowsCardItWorkMobile = document.querySelector(
+  ".rows__card__it__work-mobile"
+);
 
 if (rowsCardItWorkMobile) {
   const rowsCardItWorkMobileSwiper = new Swiper(rowsCardItWorkMobile, {
@@ -125,7 +127,12 @@ if (rowsCardItWorkMobile) {
     const scrolledY = window.scrollY;
     let isBlockedVerticalScroll = true;
 
-    if (scrolledY > 768 && scrolledY < 1024 && rowsCardItWorkMobileSwiper.isEnd !== true  && window.innerWidth < 1024) {
+    if (
+      scrolledY > 750 &&
+      scrolledY < 800 &&
+      rowsCardItWorkMobileSwiper.isEnd !== true &&
+      window.innerWidth < 1024
+    ) {
       if (isBlockedVerticalScroll) {
         document.body.style.overflow = "hidden";
         window.addEventListener("touchend", () => {
@@ -137,10 +144,20 @@ if (rowsCardItWorkMobile) {
             }
             rowsCardItWorkMobileSwiper.slideNext();
           }
-        })
+        });
+        window.addEventListener("wheel", () => {
+          if (isBlockedVerticalScroll) {
+            if (rowsCardItWorkMobileSwiper.isEnd === true) {
+              isBlockedVerticalScroll = false;
+              document.body.style.overflow = "auto";
+              return;
+            }
+            rowsCardItWorkMobileSwiper.slideNext();
+          }
+        });
       }
     }
-  })
+  });
 }
 
 let resultsSwiper;
@@ -178,21 +195,41 @@ document.addEventListener("DOMContentLoaded", function () {
     if (tabs.length > 0) {
       tabs.forEach((tab) => {
         tab.addEventListener("click", function () {
-          const activeSlide = document.querySelector(".results .swiper-slide-active");
-          const oldTab = document.querySelector(".results .swiper-slide-active .tab__results.active");
+          const activeSlide = document.querySelector(
+            ".results .swiper-slide-active"
+          );
+          const oldTab = document.querySelector(
+            ".results .swiper-slide-active .tab__results.active"
+          );
           if (oldTab) oldTab.classList.remove("active");
           tab.classList.add("active");
           if (activeSlide) {
             if (tab.dataset.tab === "before") {
-              activeSlide.querySelector(".before__results").classList.add("active");
-              activeSlide.querySelector(".before__results").classList.remove("no-active");
-              activeSlide.querySelector(".after_results").classList.remove("active");
-              activeSlide.querySelector(".after_results").classList.add("no-active");
+              activeSlide
+                .querySelector(".before__results")
+                .classList.add("active");
+              activeSlide
+                .querySelector(".before__results")
+                .classList.remove("no-active");
+              activeSlide
+                .querySelector(".after_results")
+                .classList.remove("active");
+              activeSlide
+                .querySelector(".after_results")
+                .classList.add("no-active");
             } else {
-              activeSlide.querySelector(".before__results").classList.remove("active");
-              activeSlide.querySelector(".before__results").classList.add("no-active");
-              activeSlide.querySelector(".after_results").classList.add("active");
-              activeSlide.querySelector(".after_results").classList.remove("no-active");
+              activeSlide
+                .querySelector(".before__results")
+                .classList.remove("active");
+              activeSlide
+                .querySelector(".before__results")
+                .classList.add("no-active");
+              activeSlide
+                .querySelector(".after_results")
+                .classList.add("active");
+              activeSlide
+                .querySelector(".after_results")
+                .classList.remove("no-active");
             }
           }
         });
