@@ -1,0 +1,327 @@
+.main__tariffs {
+  overflow-x: hidden;
+  margin-bottom: 120px;
+}
+.rows__tariffs {
+  display: flex;
+  gap: 20px;
+}
+
+.title__tariff__categories {
+  border: 1px solid #3b6be9;
+  color: #3b6be9;
+  padding: 13px 0px;
+  border-radius: 16px;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.scroll-to-top {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.card__tariffs {
+  background-color: #f4f7ff;
+  border-radius: 16px;
+  padding: 30px;
+  clip-path: polygon(
+    27px 0%,
+    100% 0%,
+    100% calc(100% - 20px),
+    calc(100% - 20px) 100%,
+    0% 100%,
+    0% 20px
+  );
+}
+
+.title__card__tariffs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info__card__tariffs h3 {
+  font-size: 34px;
+  color: #1d1d1d;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.info__card__tariffs p {
+  color: #666666;
+  margin-bottom: 50px;
+}
+
+.class__course {
+  padding: 14px 16px;
+  border-radius: 16px;
+  color: #6791ff;
+  border: 1px solid #6791ff;
+  max-height: 46px;
+  font-weight: 500;
+}
+
+.old__price {
+  color: #666666;
+  font-weight: 500;
+  text-decoration: line-through;
+  margin-bottom: 10px;
+  line-height: 120%;
+}
+
+.priec_text {
+  color: #3b6be9;
+  font-size: 32px;
+  font-weight: 600;
+  position: relative;
+  line-height: 120%;
+}
+.priec_text::before {
+  content: "-32%";
+  position: absolute;
+  top: -29px;
+  left: 115%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: white;
+  background-color: #f51010;
+  padding: 1px;
+  border-radius: 100px;
+  width: 50px;
+  height: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.price__card__tariffs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.price__card__tariffs a {
+  padding: 25px 70px;
+  background-color: #f51010;
+  color: white;
+  border-radius: 16px;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.price__card__tariffs a:hover {
+  background-color: #3b6be9;
+  transition: all 0.3s ease-in-out;
+}
+
+.return__money {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding-top: 30px;
+  border-top: 1px solid #dddddd;
+}
+
+.return__money p {
+  color: #666666;
+  font-size: 13px;
+}
+
+.blue__card {
+  background-color: #3b6be9;
+  color: white;
+}
+
+.white__color {
+  color: white !important;
+}
+
+.margitn__top {
+  margin-top: 100px;
+}
+
+/* content__price */
+
+.content__price {
+  margin-bottom: 120px;
+}
+
+.rows__content__price {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.price-card {
+  background-color: #f5f8ff;
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: 0.3s ease;
+}
+
+.price-card__number {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #FFF4F4;
+  color: #f51010;
+  font-size: 34px;
+  font-weight: bold;
+  border-radius: 24px;
+  padding: 21px 33px;
+  font-weight: 400;
+}
+
+.price-card__icon {
+  align-self: flex-end;
+  width: 80px;
+  height: 80px;
+}
+
+.price-card__icon img {
+  width: 100%;
+  height: auto;
+}
+
+.price-card h3 {
+  margin: 24px 0px 40px 0px;
+  font-size: 34px;
+  font-weight: 500;
+  color: #1d1d1d;
+  max-width: 300px;
+}
+
+.price-card p {
+  margin-top: auto;
+  font-size: 16px;
+  color: #464646;
+  line-height: 140%;
+}
+
+.price-card.active {
+  border: 2px solid #3a6be8;
+  background-color: #fdfdff;
+}
+
+/* Адаптив */
+@media (max-width: 992px) {
+  .rows__content__price {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .rows__content__price {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* info course */
+
+.info__course__section {
+  margin-bottom: 120px;
+}
+
+.inner__rows__info__course {
+  height: 651px;
+  padding-top: 51px;
+  position: relative;
+}
+
+.rows__course__section {
+  background-color: #386ae8;
+  border-radius: 32px;
+  padding-top: 51px;
+  background-image: url(../assets/images/rows_steps.svg),
+    url(../assets/images/rows_steps.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 426px 200px, 426px 200px;
+  background-position: bottom 27px left 52px, top 143px right 50px;
+}
+
+.rows__course__section h2 {
+  font-weight: 500;
+}
+
+.card__info__cours {
+  padding: 25px 30px;
+  background-color: #ffffff;
+  border-radius: 36px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  align-items: center;
+  max-width: 338px;
+}
+
+.card__info__cours p {
+  color: #666666;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+.position_one {
+  position: absolute;
+  left: 122px;
+}
+
+.position_two {
+  position: absolute;
+  left: 394px;
+  bottom: 190px;
+  background-color: #f4f7ff;
+  z-index: 10;
+}
+
+.position_three {
+  position: absolute;
+  left: 664px;
+}
+
+.position_four {
+  position: absolute;
+  left: 936px;
+  bottom: 190px;
+  background-color: #f4f7ff;
+  z-index: 10;
+}
+
+/* footer */
+
+.footer {
+  margin: 0 auto;
+  max-width: 1400px;
+  position: relative;
+}
+
+.inner__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+  background-color: #666666;
+  border-radius: 20px;
+}
+
+.inner__footer img {
+  max-width: 126px
+}
+
+.inner__footer p {
+  color: #b6b6b6;
+  font-weight: 500;
+}
+
+.inner__footer a {
+  padding: 16px;
+  border-radius: 12px;
+  background-color: white;
+}
