@@ -129,7 +129,7 @@ if (rowsCardItWorkMobile) {
 
     if (
       scrolledY > 750 &&
-      scrolledY < 800 &&
+      scrolledY < 1024 &&
       rowsCardItWorkMobileSwiper.isEnd !== true &&
       window.innerWidth < 1024
     ) {
