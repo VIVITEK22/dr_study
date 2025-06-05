@@ -487,7 +487,7 @@ ul {
 }
 
 .rows__card__it__work-mobile {
-  display: none;
+  display: none !important;
 }
 
 .white__card__work {
@@ -613,7 +613,7 @@ ul {
     display: none;
   }
   .rows__card__it__work-mobile {
-    display: flex;
+    display: block !important;
     flex-direction: row;
     gap: 0;
     padding: 0;
@@ -1807,7 +1807,7 @@ ul {
   }
   .rows__card__it__work-mobile {
     min-height: unset;
-    display: flex;
+    display: block !important;
     flex-direction: row;
     gap: 0;
     padding: 0;

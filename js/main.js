@@ -122,10 +122,26 @@ if (rowsCardItWorkMobile) {
     slidesPerView: 1,
     spaceBetween: 20,
   });
+  let isWillBlockedVerticalScroll = true;
+  let isBlockedVerticalScroll = false;
+
+  window.addEventListener("touchstart", (e) => {
+    if (isBlockedVerticalScroll) {
+      if (rowsCardItWorkMobileSwiper.isEnd === true) {
+        isWillBlockedVerticalScroll = false;
+        isBlockedVerticalScroll = false;
+        rowsCardItWorkMobileSwiper.allowTouchMove = true;
+        document.body.style.overflow = "auto";
+        return;
+      } else {
+        rowsCardItWorkMobileSwiper.slideNext();
+      }
+
+    }
+  });
 
   window.addEventListener("scroll", () => {
     const scrolledY = window.scrollY;
-    let isBlockedVerticalScroll = true;
 
     if (
       scrolledY > 750 &&
@@ -133,31 +149,10 @@ if (rowsCardItWorkMobile) {
       rowsCardItWorkMobileSwiper.isEnd !== true &&
       window.innerWidth < 1024
     ) {
-      if (isBlockedVerticalScroll) {
+      if (isWillBlockedVerticalScroll) {
+        rowsCardItWorkMobileSwiper.allowTouchMove = false;
         document.body.style.overflow = "hidden";
-        window.addEventListener("touchend", () => {
-          if (isBlockedVerticalScroll) {
-            if (rowsCardItWorkMobileSwiper.isEnd === true) {
-              isBlockedVerticalScroll = false;
-              document.body.style.overflow = "auto";
-              return;
-            } else {
-              rowsCardItWorkMobileSwiper.slideNext();
-            }
-
-          }
-        });
-        window.addEventListener("wheel", () => {
-          if (isBlockedVerticalScroll) {
-            if (rowsCardItWorkMobileSwiper.isEnd === true) {
-              isBlockedVerticalScroll = false;
-              document.body.style.overflow = "auto";
-              return;
-            } else {
-              rowsCardItWorkMobileSwiper.slideNext();
-            }
-          }
-        });
+        isBlockedVerticalScroll = true;
       }
     }
   });
@@ -166,9 +161,6 @@ if (rowsCardItWorkMobile) {
 let resultsSwiper;
 document.addEventListener("DOMContentLoaded", function () {
   const resultsSwiperElement = document.querySelector(".results .swiper");
-  console.log(
-    document.querySelector(".results .custom-swiper-button.custom-next")
-  );
   if (resultsSwiperElement) {
     resultsSwiper = new Swiper(resultsSwiperElement, {
       loop: true,
