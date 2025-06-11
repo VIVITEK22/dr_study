@@ -2882,6 +2882,8 @@ nav ul {
   .date__item {
     font-size: 12px;
     padding: 6px 10px;
+    width: auto;
+    height: auto;
   }
 
   .card__info__person {
