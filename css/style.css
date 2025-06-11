@@ -98,6 +98,14 @@ ul {
   align-items: center;
 }
 
+.rows__header nav {
+  margin-bottom: 4px;
+}
+
+nav ul {
+  padding-left: 10px;
+}
+
 .header__nav-list {
   display: flex;
   gap: 22px;
