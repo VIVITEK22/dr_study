@@ -300,6 +300,14 @@ if (tariffsSelect) {
     item.addEventListener("click", function() {
       tariffsSelected.textContent = item.textContent;
       tariffsSelect.classList.remove("active");
+      const activeCards = document.querySelector(`.rows__card__tarifs.active`);
+      const cards = document.querySelector(`.rows__card__tarifs[data-value=${item.dataset.value}]`)
+      if (cards) {
+        cards.classList.add("active");
+        if (activeCards) {
+          activeCards.classList.remove("active");
+        }
+      }
     })
   }
 }

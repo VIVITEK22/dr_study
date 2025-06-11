@@ -2471,6 +2471,12 @@ nav ul {
   .rows__card__tarifs .title__tariff__categories {
     display: none;
   }
+  .rows__card__tarifs {
+    display: none;
+  }
+  .rows__card__tarifs.active {
+    display: block;
+  }
   .tariffs__select {
     display: block;
     width: 100%;
