@@ -7,6 +7,10 @@
   gap: 20px;
 }
 
+.tariffs__select {
+  display: none;
+}
+
 .title__tariff__categories {
   border: 1px solid #3b6be9;
   color: #3b6be9;

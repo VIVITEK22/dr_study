@@ -282,3 +282,24 @@ document.addEventListener("DOMContentLoaded", function () {
   //   }
   // }
 });
+
+const tariffsSelect = document.querySelector(".tariffs__select");
+console.log(tariffsSelect);
+if (tariffsSelect) {
+  const tariffsSelected = tariffsSelect.querySelector(".tariffs__select-selected");
+  const tariffsItems = tariffsSelect.querySelectorAll(".tariffs__select-item");
+  tariffsSelected.addEventListener("click", function() {
+    if (!tariffsSelect.classList.contains("active")) {
+      tariffsSelect.classList.add("active");
+    } else {
+      tariffsSelect.classList.remove("active");
+    }
+  });
+
+  for (const item of tariffsItems) {
+    item.addEventListener("click", function() {
+      tariffsSelected.textContent = item.textContent;
+      tariffsSelect.classList.remove("active");
+    })
+  }
+}
