@@ -10,7 +10,7 @@
 .title__tariff__categories {
   border: 1px solid #3b6be9;
   color: #3b6be9;
-  padding: 13px 0px;
+  padding: 15px 0px;
   border-radius: 16px;
   text-align: center;
   font-weight: 500;
@@ -55,7 +55,7 @@
 
 .class__course {
   padding: 14px 16px;
-  border-radius: 16px;
+  border-radius: 100px;
   color: #6791ff;
   border: 1px solid #6791ff;
   max-height: 46px;
@@ -102,7 +102,7 @@
 }
 
 .price__card__tariffs a {
-  padding: 25px 70px;
+  padding: 26px 71px;
   background-color: #f51010;
   color: white;
   border-radius: 16px;
@@ -151,31 +151,36 @@
 .rows__content__price {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
 
 .price-card {
   background-color: #f5f8ff;
-  border-radius: 16px;
-  padding: 24px;
+  border-radius: 24px;
+  padding: 30px;
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 12px;
   transition: 0.3s ease;
+  min-height: 325px;
+  justify-content: space-between;
 }
 
 .price-card__number {
   position: absolute;
-  top: 16px;
-  left: 16px;
+  top: 30px;
+  left: 30px;
   background: #FFF4F4;
   color: #f51010;
   font-size: 34px;
   font-weight: bold;
   border-radius: 24px;
-  padding: 21px 33px;
   font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;;
 }
 
 .price-card__icon {
@@ -189,8 +194,15 @@
   height: auto;
 }
 
+.price-card__content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .price-card h3 {
-  margin: 24px 0px 40px 0px;
+  margin-top: 38px;
   font-size: 34px;
   font-weight: 500;
   color: #1d1d1d;
@@ -198,7 +210,6 @@
 }
 
 .price-card p {
-  margin-top: auto;
   font-size: 16px;
   color: #464646;
   line-height: 140%;
@@ -307,6 +318,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 10px;
+  padding-left: 24px;
   background-color: #666666;
   border-radius: 20px;
 }

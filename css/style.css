@@ -1,28 +1,28 @@
 @font-face {
   font-family: "Cygre";
   src:
-    url("../fonts/Cygre-Regular.woff2") format("woff2"), url("../fonts/Cygre-Regular.ttf") format("truetype");
+    url("../fonts/Cygre-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cygre";
-  src: url("../fonts/Cygre-Medium.woff2") format("woff2"), url("../fonts/Cygre-Medium.ttf") format("truetype");
+  src: url("../fonts/Cygre-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cygre";
-  src: url("../fonts/Cygre-SemiBold.woff2") format("woff2"), url("../fonts/Cygre-SemiBold.ttf") format("truetype");
+  src: url("../fonts/Cygre-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Cygre";
-  src: url("../fonts/Cygre-Bold.woff2") format("woff2"), url("../fonts/Cygre-Bold.ttf") format("truetype");
+  src: url("../fonts/Cygre-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -499,7 +499,7 @@ ul {
   background-size: cover;
   background-repeat: no-repeat;
   max-width: 453px;
-  padding: 120px 70px 30px 30px;
+  padding: 120px 32px 30px 30px;
   min-height: 500px;
   opacity: 0;
   transform: translateY(50px);
@@ -512,7 +512,7 @@ ul {
   background-size: cover;
   background-repeat: no-repeat;
   max-width: 453px;
-  padding: 120px 70px 30px 30px;
+  padding: 120px 32px 30px 30px;
   height: 393px;
   opacity: 0;
   transform: translateY(50px);
@@ -521,7 +521,7 @@ ul {
 
 .custom__position__card__work {
   position: absolute;
-  left: 382px;
+  left: 343px;
   bottom: -105px;
   opacity: 0;
   transform: translateY(50px);
@@ -587,6 +587,7 @@ ul {
 .pre__title_card__work {
   color: #464646;
   line-height: 140%;
+  max-width: 391px;
 }
 
 .color__white__card__work {
@@ -927,10 +928,10 @@ ul {
 .step--1::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  right: -170px;
-  width: 150px;
-  height: 200px;
+  bottom: 77px;
+  right: -221px;
+  width: 200px;
+  height: 150px;
   background-image: url("../assets/images/arrow__1.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -963,14 +964,14 @@ ul {
 }
 
 .step--4 {
-  top: 774px;
+  top: 755px;
   right: 0px;
 }
 
 .step--4::after {
   content: "";
   position: absolute;
-  bottom: 100px;
+  bottom: 80px;
   left: -161px;
   width: 150px;
   height: 150px;
@@ -1037,11 +1038,19 @@ ul {
   margin-bottom: 120px;
 }
 
+.course .social__networks {
+  margin-bottom: 20px;
+}
+
 .rows__social__networks {
   display: flex;
   gap: 20px;
   align-items: stretch;
   /* выравнивает карточки по высоте */
+}
+
+.rows__social__networks>.card__social__networks:last-child p {
+  max-width: 545px;
 }
 
 .card__social__networks {
@@ -1062,7 +1071,7 @@ ul {
 }
 
 .pre__title__social {
-  color: #464646;
+  color: #666666;
   line-height: 140%;
   margin-bottom: 69px;
 }
@@ -1072,7 +1081,7 @@ ul {
 }
 
 .link__item__social__networks {
-  padding: 23px 58px;
+  padding: 27px 58px;
   border-radius: 16px;
   background-color: #f51010;
   color: white;
@@ -1318,7 +1327,7 @@ ul {
 }
 
 .theme p {
-  padding: 5px 16px;
+  padding: 6px 16px;
   color: #6791ff;
   border-radius: 100px;
   border: 1px solid #6791ff;
@@ -1328,6 +1337,7 @@ ul {
 
 .title__card__news p {
   font-size: 24px;
+  line-height: 120%;
   font-weight: 500;
   color: #1d1d1d;
 }
@@ -1344,7 +1354,7 @@ ul {
 }
 
 .date a {
-  padding: 14px 32px;
+  padding: 16px 32px;
   border-radius: 16px;
   color: white;
   background-color: #f51010;
@@ -1362,7 +1372,7 @@ ul {
   border: 1px solid #3b6be9;
   color: #3b6be9;
   text-align: center;
-  padding: 14px 10px;
+  padding: 15px 10px;
   text-decoration: none;
   border-radius: 16px;
   transition: all 0.3s ease;
@@ -1380,7 +1390,7 @@ ul {
 /* rewiews */
 
 .reviews {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .rows__reviews {
@@ -1599,6 +1609,8 @@ ul {
 
   .rows__achievement {
     flex-wrap: wrap;
+    gap: 10px !important;
+
   }
 
   .rows__card__course__main,
@@ -1628,8 +1640,8 @@ ul {
   }
 
   .btn__course__enter p {
-    font-size: 15px !important;
-    max-width: 150px;
+    font-size: 12px !important;
+    max-width: 107px;
   }
 
   .img__course__person_main img {
@@ -1855,19 +1867,21 @@ ul {
   .rows__card__specialists {
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 10px;
   }
 
   .card__specialists {
     width: 100%;
     max-width: 100%;
+    border-radius: 24px;
   }
 
   .img__specialists {
-    padding: 20px;
+    padding: 10px;
     max-width: 100%;
     display: flex;
     margin: 0 auto;
+    border-radius: 30px;
   }
 
   .title__card__specialists {
@@ -1918,7 +1932,11 @@ ul {
 
   .rows__well__content {
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
+  }
+
+  .rows__well__content>.card__well__Content:last-child .pre__title__card {
+    max-width: 311px
   }
 
   .card__well__Content {
@@ -1936,11 +1954,16 @@ ul {
 
   .rows__social__networks {
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
   }
 
   .card__social__networks {
     padding: 30px 20px;
+  }
+
+  .rows__social__networks>.card__social__networks:last-child p,
+  .card__social__networks p {
+    max-width: 310px;
   }
 
   .title__social__networks {
@@ -1954,7 +1977,7 @@ ul {
 
   .rows__news {
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
   }
 
   .card__news {
@@ -1982,7 +2005,6 @@ ul {
 
   /* Reviews */
   .reviews {
-    margin-bottom: 60px;
     position: relative;
     overflow: hidden;
     padding: 0 15px;
@@ -2007,7 +2029,7 @@ ul {
   .tabs__results {
     display: flex !important;
     position: absolute;
-    top: 40px !important;
+    top: 53px !important;
     width: 90%;
     left: 29px;
     z-index: 10;
@@ -2071,7 +2093,7 @@ ul {
 
   .rows__tariffs {
     flex-direction: column;
-    gap: 40px;
+    gap: 10px;
   }
 
   .title__tariff__categories {
@@ -2096,6 +2118,15 @@ ul {
 
   .card__info__person {
     padding: 18px 22px 20px 20px;
+    top: -47px;
+  }
+
+  .results .swiper {
+    top: -30px
+  }
+
+  .results {
+    margin-bottom: 50px;
   }
 
   .img__person {
@@ -2267,8 +2298,13 @@ ul {
     max-height: 300px;
   }
 
+  .inner__rows__info__course > .card__info__cours:nth-child(3),
+  .inner__rows__info__course > .card__info__cours:nth-child(4) {
+    gap: 26px;
+  }
+
   .card__info__cours img {
-    max-height: 55px;
+    max-height: 50px;
     object-fit: contain;
   }
 
@@ -2308,23 +2344,39 @@ ul {
     margin-bottom: 28px;
   }
 
+  .price-card {
+    height: auto;
+    min-height: unset;
+  }
+
   .price-card h3 {
     font-size: 29px !important;
-    margin: 0px 0px 0px 0px !important;
+    margin-top: 30px;
+  }
+
+  .price-card__content {
+    gap: 20px;
   }
 
   .price-card p {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .price-card__number {
     color: #f51010;
-    font-size: 23px !important;
-    padding: 14px 22px !important;
+    font-size: 16px !important;
+    border-radius: 16px;
   }
 
   .price-card__icon img {
-    max-width: 55px;
+    max-width: 50px;
+  }
+
+  .price-card__number {
+    width: 50px;
+    height: 50px;
+    left: 20px;
+    top: 20px;
   }
 
   .priec_text {
@@ -2350,10 +2402,14 @@ ul {
   }
 
   .title__tariff__categories {
-    margin-bottom: 15px !important;
+    margin-bottom: 10px !important;
     font-size: 12px;
     border-radius: 12px;
     padding: 16px 0;
+  }
+
+  .title__tariff__categories:last-of-type {
+    margin-bottom: 20px !important;
   }
 
   .card__content_course,
@@ -2571,6 +2627,7 @@ ul {
 
   .info__specialists {
     padding: 20px;
+    padding-bottom: 10px;
   }
 
   .title__item {
@@ -2583,6 +2640,7 @@ ul {
 
   .inner__steps {
     padding: 30px 10px 10px 10px;
+    border-radius: 20px;
   }
 
   .steps h2 {
@@ -2594,6 +2652,10 @@ ul {
     padding: 20px;
     border-radius: 16px;
     margin: 10px 0;
+  }
+
+  .step--4 {
+    margin-bottom: 0;
   }
 
   .step .icon_steps {
@@ -2673,6 +2735,10 @@ ul {
     font-weight: 600;
   }
 
+  .main__tariffs .title__section {
+    font-size: 30px;
+  }
+
   .tabs__results {
     gap: 10px;
     left: 50%;
@@ -2698,7 +2764,7 @@ ul {
 
   .tab__results {
     width: 150px;
-    padding: 10px 0;
+    padding: 11px 0;
     border-radius: 12px;
   }
 
@@ -2802,12 +2868,14 @@ ul {
     max-width: unset;
     flex: 0 0 90%;
     border-radius: 16px;
+    max-width: 315px;
   }
 
   .card__reviews .decr__card__reviews {
     font-size: 12px;
     margin-bottom: 30px;
     line-height: 140%;
+    max-width: 275px;
   }
 
   .img__person__reviewss img {
@@ -2846,6 +2914,12 @@ ul {
     background-position: bottom 12px right 12px !important;
     background-size: 20px 20px !important;
     background-image: url("../assets/images/arrow__main__course-mobile.svg") !important;
+    min-width: unset !important;
+  }
+
+  .btn__course__enter.mobilu {
+    right: 10px !important;
+    bottom: 10px;
   }
 
   .rewies__card__course {
@@ -2876,6 +2950,11 @@ ul {
   .back_image_achievement_4 {
     background-size: 25px 25px !important;
     background-position: top 16px right 16px !important;
+    min-height: 100px;
+  }
+
+  .back_image_achievement_4 p {
+    max-width: 234px;
   }
 
   .main__course {
@@ -2884,11 +2963,21 @@ ul {
 
   .rows__bonuses {
     padding: 0;
+    gap: 10px;
+  }
+
+  .card__achievement {
+    clip-path: polygon(0% 0%,
+        100% 0%,
+        100% calc(100% - 30px),
+        calc(100% - 34px) 100%,
+        0% 100%);
   }
 
   .card__bonuses {
     padding: 20px !important;
     height: auto !important;
+    clip-path: unset !important;
   }
 
   .card__bonuses p {
@@ -3009,12 +3098,11 @@ ul {
   .price-card__icon {
     width: 50px;
     height: 50px;
-    margin-bottom: 10px;
   }
 
   .price-card {
     padding: 20px;
-    gap: 20px;
+    border-radius: 16px;
   }
 
   .rows__content__price {
